@@ -15,7 +15,7 @@ def createResourceGroup(url,parentID,display_name,description):
     )
     return r
 
-def createVectorLayer(url:str,parentID:int,display_name:str,geometry_type:str,fields:list,srs:int=4326,description:str=''):
+def createVectorLayer(url:str,parentID:int,display_name:str,geometry_type:str,fields:list,srs:int=3857,description:str=''):
     r= requests.post(
         url=url,
         json={
@@ -33,3 +33,11 @@ def createVectorLayer(url:str,parentID:int,display_name:str,geometry_type:str,fi
         auth=AUTH
     )
     return r
+
+
+def addFeature(resId: int, feature: dict):
+    return requests.post(
+        url=f'https://geo.mauniver.ru/api/resource/{resId}/feature/?src=3857',
+        json=feature,
+        auth=AUTH
+    )
