@@ -3,13 +3,13 @@ import api
 base_url = 'https://geo.mauniver.ru/api/'
 res_url = f'{base_url}resource/'
 
-# # Создаём группу ресурсов
+# # Группу ресурсов
 # response = api.createResourceGroup(res_url,parentID=207,display_name="Asdf",description='zxcxvc')
 # print(response)
 
 
 
-# # Создаём векторный слой
+# # Векторный слой
 # response = api.createVectorLayer(res_url,parentID=251,display_name='ppppp',description='ppp',geometry_type="POINT", srs=3857,
 #                               fields=[
 #                                   {
