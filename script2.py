@@ -102,13 +102,13 @@ def get_black_pixel_coordinates(image_path, coords_file_path):
 
 
 
-# 1. Создание группы ресурсов (опционально)
+# Создание группы ресурсов 
 create_group = input("Создать группу ресурсов? (y/n): ").lower()
 resource_group_id = None
 if create_group == 'y':
     resource_group_id = create_resource_group_interactive(res_url)
 
-# 2. Создание векторного слоя (опционально)
+# Создание векторного слоя
 create_layer = input("Создать векторный слой? (y/n): ").lower()
 vector_layer_id = None
 if create_layer == 'y':
@@ -128,12 +128,12 @@ if vector_layer_id is None:
         exit()
 
 
-# 3. Выбор файла снимка
+# Выбор файла снимка
 files_name = input("Введите имя файла снимка (без расширения): ")
 image_file = f"{files_name}.png"
 coords_file = f"{files_name}.txt"
 
-# Проверяем, существуют ли файлы
+# Проверка существования файла
 if not os.path.exists(image_file):
     print(f"Ошибка: Файл снимка '{image_file}' не найден")
     exit()
@@ -142,7 +142,7 @@ if not os.path.exists(coords_file):
     exit()
 
 
-# 4. Запуск обработки и добавление объектов
+# Запуск обработки и добавление объектов
 black_pixel_coords = get_black_pixel_coordinates(image_file, coords_file)
 
 if black_pixel_coords:
